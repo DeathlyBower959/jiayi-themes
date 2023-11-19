@@ -14,17 +14,14 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 16
-
-      - name: Change directory
-        run: cd .update-themes
-
-      - run: ls
+          node-version: 20
 
       - name: Install packages
+        working-directory: ./.github/workflows/update-themes
         run: npm ci
 
       - name: Run TS Action
+        working-directory: ./.github/workflows/update-themes
         run: npm run start
 
       - name: Check for modified files
