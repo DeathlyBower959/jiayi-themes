@@ -19,6 +19,8 @@ jobs:
       - name: Change directory
         run: cd .github/workflows/update-themes
 
+      - run: ls
+
       - name: Install packages
         run: npm ci
 
