@@ -34,9 +34,4 @@ jobs:
           git config --local user.name "GitHub Action"
           git add all_themes.json
           git commit -m "New Theme"
-
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GH_TOKEN }}
-          branch: ${{ github.ref }}
+          git push
