@@ -1,3 +1,3 @@
 const fs = require('fs');
 
-fs.writeFile('test.txt', 'Hello world', err => {});
+fs.writeFile('map.json', 'Hello world', err => {});

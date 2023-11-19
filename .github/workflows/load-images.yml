@@ -30,6 +30,6 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add src/galleryImages.json
-          git commit -m "New Images"
+          git add map.json
+          git commit -m "New Theme"
           git push
