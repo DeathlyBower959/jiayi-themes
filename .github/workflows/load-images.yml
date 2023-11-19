@@ -19,7 +19,7 @@ jobs:
       - name: Install packages
         run: npm ci
 
-      - name: Run TS Action
+      - name: Run JS Action
         run: npm run start
 
       - name: Check for modified files
