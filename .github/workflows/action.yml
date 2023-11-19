@@ -1,0 +1,29 @@
+name: Update theme list
+
+on:
+  push:
+    branches: main
+  workflow_dispatch:
+
+jobs:
+  get-themes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run JS Action
+        uses: 'node18'
+        with:
+          main: index.js
+
+      - name: Check for modified files
+        id: git-check
+        run: echo "modified=$([ -z "`git status --porcelain`" ] && echo "false" || echo "true")" >> $GITHUB_OUTPUT
+      - name: Commit latest images
+        if: steps.git-check.outputs.modified == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add src/galleryImages.json
+          git commit -m "New Images"
+          git push
