@@ -16,12 +16,8 @@ jobs:
         with:
           node-version: 16
 
-      - run: ls
-
       - name: Change directory
-        run: cd .github/workflows/update-themes
-
-      - run: ls
+        run: cd .update-themes
 
       - name: Install packages
         run: npm ci
